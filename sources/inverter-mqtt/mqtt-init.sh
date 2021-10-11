@@ -17,13 +17,15 @@ registerTopic () {
         -u "$MQTT_USERNAME" \
         -P "$MQTT_PASSWORD" \
         -i $MQTT_CLIENTID \
-        -t "$MQTT_TOPIC/sensor/"$MQTT_DEVICENAME"_$1/config" \
-        -m "{
-            \"name\": \""$MQTT_DEVICENAME"_$1\",
-            \"unit_of_measurement\": \"$2\",
-            \"state_topic\": \"$MQTT_TOPIC/sensor/"$MQTT_DEVICENAME"_$1\",
-            \"icon\": \"mdi:$3\"
-        }"
+        -t "$MQTT_TOPIC/sensor/"$MQTT_DEVICENAME"_$1" \
+        -m "$3"
+#        -t "$MQTT_TOPIC/sensor/"$MQTT_DEVICENAME"_$1/config" \
+#        -m "{
+#            \"name\": \""$MQTT_DEVICENAME"_$1\",
+#            \"unit_of_measurement\": \"$2\",
+#            \"state_topic\": \"$MQTT_TOPIC/sensor/"$MQTT_DEVICENAME"_$1\",
+#            \"icon\": \"mdi:$3\"
+#        }"
 }
 
 registerInverterRawCMD () {
@@ -33,11 +35,12 @@ registerInverterRawCMD () {
         -u "$MQTT_USERNAME" \
         -P "$MQTT_PASSWORD" \
         -i $MQTT_CLIENTID \
-        -t "$MQTT_TOPIC/sensor/$MQTT_DEVICENAME/config" \
-        -m "{
-            \"name\": \""$MQTT_DEVICENAME"\",
-            \"state_topic\": \"$MQTT_TOPIC/sensor/$MQTT_DEVICENAME\"
-        }"
+        -t "$MQTT_TOPIC/sensor/$MQTT_DEVICENAME" \
+#        -t "$MQTT_TOPIC/sensor/$MQTT_DEVICENAME/config" \
+#        -m "{
+#            \"name\": \""$MQTT_DEVICENAME"\",
+#            \"state_topic\": \"$MQTT_TOPIC/sensor/$MQTT_DEVICENAME\"
+#        }"
 }
 
 registerTopic "Inverter_mode" "" "solar-power" # 1 = Power_On, 2 = Standby, 3 = Line, 4 = Battery, 5 = Fault, 6 = Power_Saving, 7 = Unknown
