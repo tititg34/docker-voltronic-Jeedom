@@ -19,7 +19,7 @@ It's pretty straightforward, just clone down the sources and set the configurati
 ```bash
 # Clone down sources on the host you want to monitor...
 git clone https://github.com/tititg34/docker-voltronic-Jeedom.git /opt/jeedom-inverter-mqtt-agent
-cd /opt/ha-inverter-mqtt-agent
+cd /opt/jeedom-inverter-mqtt-agent
 
 # Configure the 'device=' directive (in inverter.conf) to suit for RS232 or USB.. 
 vi config/inverter.conf
