@@ -12,7 +12,7 @@ services:
     #  dockerfile: Dockerfile.dev
 
 
-    container_name: voltronic-mqtt
+    container_name: voltronic-mqtt-jeedom
 
     privileged: true
     restart: always
